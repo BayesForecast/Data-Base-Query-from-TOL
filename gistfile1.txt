@@ -1,0 +1,19 @@
+Real DBClose("ODBC_Name"); //Closes the DB which ODBC is on the argument of the function
+Real DBOpen ("ODBC_Name", "User_Name", "Password");//Opens the DB asking for the name of the DB, an user for the DB and a valid password
+
+Text qry = "Here must be the query we want to run on the data base";
+			"For Example:
+			 select column_name_1,
+			        column_name_2,
+					column_name_3
+             from DB_name
+			 where Condition_1
+			 ;"
+
+/* To put the query as a time serie and make possible to get the graphic, the query have to return three columns:
+   In the first, the name of the serie
+   In the second, date
+   In the third, a real number*/
+
+
+Set series = DBSeriesColumn (qry,Time_Cycle); // This function asks for the query and a time cycle to generate a time serie
